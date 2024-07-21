@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
-  final Map<String, String> product;
-  final Function(Map<String, String>) toggleFavorite;
-  final bool isFavorite;
+  final Map<String, String> product; // Product details including image, brand, name, description, and price.
+  final Function(Map<String, String>) toggleFavorite; // Callback to toggle favorite status.
+  final bool isFavorite; // Indicates if the product is currently a favorite.
 
   const ProductDetailsScreen({
     required this.product,
@@ -22,43 +22,43 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   @override
   void initState() {
     super.initState();
-    isFavorite = widget.isFavorite;
+    isFavorite = widget.isFavorite; // Initialize favorite status based on the passed parameter.
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.product['name']!),
+        title: Text(widget.product['name']!), // Display the product name in the app bar.
         actions: [
           IconButton(
-            icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
+            icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border), // Display favorite icon based on state.
             onPressed: () {
               setState(() {
-                isFavorite = !isFavorite;
+                isFavorite = !isFavorite; // Toggle favorite status.
               });
-              widget.toggleFavorite(widget.product);
+              widget.toggleFavorite(widget.product); // Update favorite status in the parent widget.
             },
           ),
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0), // Padding around the main content.
         child: Center(
           child: Container(
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(12.0),
+              borderRadius: BorderRadius.circular(12.0), // Rounded corners for the container.
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
+                  color: Colors.grey.withOpacity(0.5), // Shadow color and opacity.
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: const Offset(0, 3),
+                  offset: const Offset(0, 3), // Shadow offset.
                 ),
               ],
             ),
-            padding: const EdgeInsets.all(100.0),
+            padding: const EdgeInsets.all(16.0), // Padding inside the container.
             child: LayoutBuilder(
               builder: (context, constraints) {
                 if (constraints.maxWidth > 600) {
@@ -66,7 +66,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   return Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      // Image
+                      // Product Image
                       Flexible(
                         flex: 1,
                         child: SizedBox(
@@ -74,12 +74,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           height: 500,
                           child: Image.asset(
                             widget.product['image']!,
-                            fit: BoxFit.cover,
+                            fit: BoxFit.cover, // Ensure the image covers the entire area.
                           ),
                         ),
                       ),
                       const SizedBox(width: 50),
-                      // Details
+                      // Product Details
                       Flexible(
                         flex: 2,
                         child: Column(
@@ -132,17 +132,17 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        // Image
+                        // Product Image
                         SizedBox(
                           width: 300,
                           height: 300,
                           child: Image.asset(
                             widget.product['image']!,
-                            fit: BoxFit.cover,
+                            fit: BoxFit.cover, // Ensure the image covers the entire area.
                           ),
                         ),
                         const SizedBox(height: 50),
-                        // Details
+                        // Product Details
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
