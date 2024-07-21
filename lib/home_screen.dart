@@ -3,6 +3,10 @@ import 'product_card.dart';
 import 'product_details_screen.dart';
 import 'favorites_screen.dart';
 
+/// The main screen displaying a grid of products and search functionality.
+///
+/// This screen is implemented as a stateful widget to manage the state of products,
+/// favorites, search, and cart functionality.
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -11,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  /// A list of products available for display.
   final List<Map<String, String>> products = [
     {
       'brand': 'Unilab',
@@ -26,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
       'price': '₱12.00',
       'image': 'assets/medicol.jpg'
     },
-    {
+      {
       'brand': 'Neozep',
       'name': 'Phenylephrine HCI Chrorphenamine',
       'description': 'Neozep is the no.1 colds medicine that has been trusted by Filipinos for more than 60 years.',
@@ -98,19 +103,28 @@ class _HomeScreenState extends State<HomeScreen> {
     },
   ];
 
+  /// A list of products currently in the cart.
   List<Map<String, String>> cart = [];
+
+  /// A list of products marked as favorites.
   List<Map<String, String>> favorites = [];
 
+  /// A list of products filtered based on search query.
   List<Map<String, String>> filteredProducts = [];
 
+  /// Controller for the search text field.
   TextEditingController searchController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
+    // Initialize filtered products to show all products by default.
     filteredProducts.addAll(products);
   }
 
+  /// Toggles the favorite status of a product.
+  ///
+  /// If the product is already in favorites, it will be removed; otherwise, it will be added.
   void toggleFavorite(Map<String, String> product) {
     setState(() {
       if (favorites.contains(product)) {
@@ -121,10 +135,16 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  /// Checks if a product is marked as favorite.
+  ///
+  /// Returns true if the product is in the favorites list, otherwise false.
   bool isFavorite(Map<String, String> product) {
     return favorites.contains(product);
   }
 
+  /// Filters the list of products based on the search query.
+  ///
+  /// Updates the [filteredProducts] list to only include products that match the search query.
   void filterProducts(String query) {
     List<Map<String, String>> tempFilteredProducts = List.from(products);
     if (query.isNotEmpty) {
@@ -144,6 +164,9 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  /// Shows a dialog to confirm logout.
+  ///
+  /// Provides options to either confirm or cancel logout.
   void _showLogoutDialog() {
     showDialog(
       context: context,
@@ -154,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: <Widget>[
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(context).pop(); // Close the dialog without logging out
               },
               child: const Text("No"),
             ),
@@ -174,8 +197,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BioPharm'),
+        title: const Text('BioPharm'), // Title of the AppBar
         actions: [
+          // Button to navigate to the Favorites screen
           IconButton(
             icon: const Icon(Icons.favorite),
             onPressed: () {
@@ -190,6 +214,7 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
           ),
+          // Button to show the logout confirmation dialog
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: _showLogoutDialog,
@@ -198,6 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Column(
         children: [
+          // Search field to filter products
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: TextField(
@@ -212,6 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+          // Grid view to display filtered products
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -220,17 +247,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   int crossAxisCount;
                   double childAspectRatio;
 
+                  // Determine grid layout based on screen width
                   if (constraints.maxWidth > 1600) {
-                    crossAxisCount = 4; // 4x4 layout
+                    crossAxisCount = 4; // 4x4 layout for large screens
                     childAspectRatio = 1.0;
                   } else if (constraints.maxWidth > 1200) {
-                    crossAxisCount = 3; // 3x3 layout
+                    crossAxisCount = 3; // 3x3 layout for medium screens
                     childAspectRatio = 1.0;
                   } else if (constraints.maxWidth > 800) {
-                    crossAxisCount = 2; // 2x2 layout
+                    crossAxisCount = 2; // 2x2 layout for smaller screens
                     childAspectRatio = 1.0;
                   } else {
-                    crossAxisCount = 1; // 1x1 layout
+                    crossAxisCount = 1; // 1x1 layout for very small screens
                     childAspectRatio = 1.0;
                   }
 
