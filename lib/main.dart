@@ -12,14 +12,14 @@ class BioPharmApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BioPharm',
+      title: 'BioPharm', // The title of the application, used by the OS and other systems.
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blue, // Primary color for the application’s theme.
       ),
-      initialRoute: '/login',
+      initialRoute: '/login', // The route to be displayed initially when the app starts.
       routes: {
-        '/login': (context) => LoginScreen(),
-        '/home': (context) => const HomeScreen(),
+        '/login': (context) => LoginScreen(), // Route for the login screen.
+        '/home': (context) => const HomeScreen(), // Route for the home screen.
       },
     );
   }
