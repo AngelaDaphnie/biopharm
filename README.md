@@ -8,7 +8,7 @@ BioPharm is a responsive Flutter Chrome application designed to provide users wi
 
 BioPharm allows users to:
 
-- **Login** securely to their accounts.
+- **Login** to their accounts.
 - **Search for pharmaceutical products** and view relevant details.
 - **View detailed information** about each product, including the product's picture, brand name, medicine name, short description, and price.
 - **Add products to a favorites list** by clicking the heart button, making it easy to find favorite items later.
