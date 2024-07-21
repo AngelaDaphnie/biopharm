@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+/// The login screen where users enter their credentials to access the app.
+///
+/// This screen adapts to different screen sizes, providing a responsive UI.
 class LoginScreen extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  /// A map of username-password pairs for simple authentication.
   final Map<String, String> users = {
     'user1': 'password1',
     'user2': 'password2',
@@ -15,6 +19,10 @@ class LoginScreen extends StatelessWidget {
 
   LoginScreen({super.key});
 
+  /// Handles the login process by validating the user credentials.
+  ///
+  /// If credentials are valid, it simulates a loading screen before navigating
+  /// to the home screen. Otherwise, it shows an error message.
   void login(BuildContext context) {
     String username = usernameController.text;
     String password = passwordController.text;
@@ -57,6 +65,10 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
+  /// Builds the UI for desktop and tablet views.
+  ///
+  /// Displays a side-by-side layout with an image and text on one side and
+  /// the login form on the other.
   Widget buildDesktopView(BuildContext context) {
     return Row(
       children: <Widget>[
@@ -141,6 +153,9 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
+  /// Builds the UI for mobile views.
+  ///
+  /// Uses a single column layout with a scrollable view for smaller screens.
   Widget buildMobileView(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
@@ -218,6 +233,9 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
+/// The loading screen displayed after a successful login attempt.
+///
+/// Simulates a loading process before navigating to the home screen.
 class LoadingScreen extends StatefulWidget {
   final VoidCallback onComplete;
 
