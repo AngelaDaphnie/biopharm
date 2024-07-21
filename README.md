@@ -47,7 +47,7 @@ To run this project locally, follow these steps:
 - user2 (password2)
 - user3 (password3)
 - user4 (password4)
-- user5 (password 5
+- user5 (password5)
   
 - **Search for Products**: Use the search bar to find specific pharmaceutical products.
 - **View Products**: Browse through the grid of products, and click on any product for more details.
