@@ -61,7 +61,7 @@ BioPharm is maintained by:
 
 ## Demo
 
-[Watch the Demo Video](demo_video.mp4)
+[![Watch the Demo Video](https://example.com/thumbnail_image.png)](https://drive.google.com/drive/u/4/folders/1jL_Rr2UJn8FnGXNNeBSzbBeJ75JjOX1a)
 
 ## Screenshots
 
