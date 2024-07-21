@@ -74,10 +74,16 @@ BioPharm is maintained by:
 ![Product Search Screen](search_screen.png)
 *Product search screen displaying a variety of pharmaceutical products.*
 
-## License
+![Product Details](details_screen.png)
+*Product Details Screen shows information about the selected medicine such as image, brand name, medicine name, description/uses and price*
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+![Favorites Screen](favorites_screen.png)
+*List of medicines that users add to their favorites list.*
 
-## Acknowledgments
+## Know More About Flutter
+(https://docs.flutter.dev/get-started/install))
+(https://docs.flutter.dev/))
 
-- Special thanks to the Flutter community for their excellent documentation and support.
+
+
+
