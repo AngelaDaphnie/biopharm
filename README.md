@@ -42,45 +42,26 @@ To run this project locally, follow these steps:
 
 ### Usage
 
-- **Login**: Enter your username and password, then click "Login".
+- **Login**: Enter given username and password, then click "Login".
+- user1 (password1)
+- user2 (password2)
+- user3 (password3)
+- user4 (password4)
+- user5 (password 5
+  
 - **Search for Products**: Use the search bar to find specific pharmaceutical products.
 - **View Products**: Browse through the grid of products, and click on any product for more details.
 - **Add to Favorites**: Click the heart button on a product to add it to your favorites list.
-
-## Where Users Can Get Help with the Project
-
-If you need help with BioPharm, you can:
-
-- Check the [Issues](https://github.com/yourusername/biopharm-flutter-chrome-app/issues) section on GitHub for common problems and solutions.
-- Open a new issue if you encounter a bug or need further assistance.
 
 ## Who Maintains and Contributes to the Project
 
 BioPharm is maintained by:
 
-- **Your Name** ([@yourusername](https://github.com/yourusername))
-
-Contributions are welcome! To contribute to this project, please follow these steps:
-
-1. **Fork the repository**.
-2. **Create a new branch**:
-    ```sh
-    git checkout -b feature/your-feature-name
-    ```
-3. **Make your changes**.
-4. **Commit your changes**:
-    ```sh
-    git commit -m 'Add some feature'
-    ```
-5. **Push to the branch**:
-    ```sh
-    git push origin feature/your-feature-name
-    ```
-6. **Open a pull request**.
+- **Your Name** ([AngelaDaphnie](https://github.com/AngelaDaphnie))
 
 ## Demo
 
-[Watch the Demo Video](videos/demo_video.mp4)
+[Watch the Demo Video](demo_video.mp4)
 
 ## Screenshots
 
