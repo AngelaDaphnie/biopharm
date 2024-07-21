@@ -16,7 +16,7 @@ BioPharm allows users to:
 
 ## Why the Project is Useful
 
-BioPharm provides a user-friendly platform for browsing and managing pharmaceutical products. Its responsive design ensures a consistent experience across various devices, making it convenient for users to access product information on-the-go.
+BioPharm provides a user-friendly platform for browsing and managing pharmaceutical products. Its responsive design ensures a consistent experience across various devices, making it convenient for users to access product information on the go.
 
 ## How Users Can Get Started with the Project
 
@@ -26,8 +26,8 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/AngelaDaphnie/biopharm-flutter-chrome-app.git
-    cd biopharm-flutter-chrome-app
+    git clone https://github.com/AngelaDaphnie/biopharm.git
+    cd biopharm
     ```
 
 2. **Install dependencies**:
