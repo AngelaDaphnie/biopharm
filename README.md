@@ -26,7 +26,7 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/yourusername/biopharm-flutter-chrome-app.git
+    git clone https://github.com/AngelaDaphnie/biopharm-flutter-chrome-app.git
     cd biopharm-flutter-chrome-app
     ```
 
@@ -57,7 +57,7 @@ To run this project locally, follow these steps:
 
 BioPharm is maintained by:
 
-- **Your Name** ([AngelaDaphnie](https://github.com/AngelaDaphnie))
+- **Angela Daphnie Toribio** ([AngelaDaphnie](https://github.com/AngelaDaphnie))
 
 ## Demo
 
@@ -81,8 +81,8 @@ BioPharm is maintained by:
 *List of medicines that users add to their favorites list.*
 
 ## Know More About Flutter
-(https://docs.flutter.dev/get-started/install))
-(https://docs.flutter.dev/))
+- https://docs.flutter.dev/get-started/install
+- https://docs.flutter.dev/
 
 
 
