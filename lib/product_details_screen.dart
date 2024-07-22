@@ -86,7 +86,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const SizedBox(height: 90),
+                            const SizedBox(height: 160),
                             Text(
                               widget.product['brand']!,
                               style: const TextStyle(
@@ -112,7 +112,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 80),
+                            const SizedBox(height: 25),
                             Text(
                               widget.product['price']!,
                               style: const TextStyle(
@@ -120,7 +120,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const SizedBox(height: 130),
+                            const SizedBox(height: 170),
                           ],
                         ),
                       ),
