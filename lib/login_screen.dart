@@ -10,11 +10,9 @@ class LoginScreen extends StatelessWidget {
 
   /// A map of username-password pairs for simple authentication.
   final Map<String, String> users = {
-    'user1': 'password1',
-    'user2': 'password2',
-    'user3': 'password3',
-    'user4': 'password4',
-    'user5': 'password5',
+     'angela': 'angela1',
+    'sebastian': 'sebastian2',
+    'geriemae': 'geriemae3',
   };
 
   LoginScreen({super.key});
