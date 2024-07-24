@@ -118,6 +118,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               style: const TextStyle(
                                 fontSize: 27,
                                 fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(255, 81, 214, 87)
                               ),
                             ),
                             const SizedBox(height: 170),

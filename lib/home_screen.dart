@@ -1,3 +1,4 @@
+import 'package:biopharm/aboutus_screen.dart';
 import 'package:flutter/material.dart';
 import 'product_card.dart';
 import 'product_details_screen.dart';
@@ -31,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
       'price': '₱12.00',
       'image': 'assets/medicol.jpg'
     },
-      {
+    {
       'brand': 'Neozep',
       'name': 'Phenylephrine HCI Chrorphenamine',
       'description': 'Neozep is the no.1 colds medicine that has been trusted by Filipinos for more than 60 years.',
@@ -103,9 +104,6 @@ class _HomeScreenState extends State<HomeScreen> {
     },
   ];
 
-  /// A list of products currently in the cart.
-  List<Map<String, String>> cart = [];
-
   /// A list of products marked as favorites.
   List<Map<String, String>> favorites = [];
 
@@ -145,7 +143,8 @@ class _HomeScreenState extends State<HomeScreen> {
   /// Filters the list of products based on the search query.
   ///
   /// Updates the [filteredProducts] list to only include products that match the search query.
-  void filterProducts(String query) {
+  void filterProducts() {
+    String query = searchController.text;
     List<Map<String, String>> tempFilteredProducts = List.from(products);
     if (query.isNotEmpty) {
       tempFilteredProducts.retainWhere((product) {
@@ -197,11 +196,24 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BioPharm'), // Title of the AppBar
+        title: const Text('BioPharm', style: TextStyle(color: Colors.white)), // Title of the AppBar
+        backgroundColor: const Color.fromRGBO(126, 175, 207, 1),
         actions: [
-          // Button to navigate to the Favorites screen
+          TextButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutUsPage()));
+            },
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+            ),
+            child: const Text(
+              'About Us',
+              style: TextStyle(fontSize: 15, color: Colors.white, decoration: TextDecoration.underline, decorationColor: Colors.white),
+            ),
+          ),
+            // Button to navigate to the Favorites screen
           IconButton(
-            icon: const Icon(Icons.favorite),
+            icon: const Icon(Icons.favorite, color: Colors.red),
             onPressed: () {
               Navigator.push(
                 context,
@@ -226,16 +238,23 @@ class _HomeScreenState extends State<HomeScreen> {
           // Search field to filter products
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: TextField(
-              controller: searchController,
-              onChanged: (value) {
-                filterProducts(value);
-              },
-              decoration: const InputDecoration(
-                labelText: 'Search for products',
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.search),
-              ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: searchController,
+                    decoration: const InputDecoration(
+                      labelText: 'Search for products',
+                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons.search),
+                    ),
+                  ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.search),
+                  onPressed: filterProducts,
+                ),
+              ],
             ),
           ),
           // Grid view to display filtered products

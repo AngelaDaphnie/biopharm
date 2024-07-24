@@ -91,7 +91,7 @@ class _ProductCardState extends State<ProductCard> {
               right: 8,
               top: 8,
               child: IconButton(
-                icon: Icon(widget.isFavorite ? Icons.favorite : Icons.favorite_border), // Display favorite icon based on state.
+                icon: Icon(widget.isFavorite ? Icons.favorite : Icons.favorite_border, color: widget.isFavorite ? Colors.red : Colors.grey), // Display favorite icon based on state.
                 onPressed: () => widget.toggleFavorite(widget.product), // Toggle favorite status when pressed.
               ),
             ),

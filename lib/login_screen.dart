@@ -18,7 +18,6 @@ class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
 
   /// Handles the login process by validating the user credentials.
-  ///
   /// If credentials are valid, it simulates a loading screen before navigating
   /// to the home screen. Otherwise, it shows an error message.
   void login(BuildContext context) {
