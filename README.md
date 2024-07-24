@@ -47,7 +47,7 @@ To run this project locally, follow these steps:
 - **Login**: Enter one of the following usernames and passwords, then click "Login":
   - `angela` (angela1)
   - `sebastian` (sebastian2)
-  - `geriemae` (geriame3)
+  - `geriemae` (geriemae3)
   
 - **Search for Products**: Use the search bar to find specific pharmaceutical products.
 - **View Products**: Browse through the grid of products and click on any product for more details.
